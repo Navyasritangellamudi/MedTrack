@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from routes.auth_routes import auth_bp
 from routes.appointment_routes import appointment_bp
 
@@ -11,7 +11,7 @@ app.register_blueprint(appointment_bp)
 
 @app.route("/")
 def home():
-    return "Welcome to MedTrack"
+    return render_template("login.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
